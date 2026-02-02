@@ -1,20 +1,29 @@
 <script setup lang="ts">
 import type { CompanyTicker } from '@/types'
 
+// Direct imports - Vite bundles these correctly for production
+import appleIcon from '@/assets/icons/apple.png'
+import metaIcon from '@/assets/icons/meta.png'
+import microsoftIcon from '@/assets/icons/microsoft.png'
+import googleIcon from '@/assets/icons/google.png'
+import amazonIcon from '@/assets/icons/amazon.png'
+import nvidiaIcon from '@/assets/icons/nvidia.png'
+import teslaIcon from '@/assets/icons/tesla.png'
+
 defineProps<{
   ticker: CompanyTicker
   size?: 'xs' | 'sm' | 'md' | 'lg'
 }>()
 
-// Map ticker to PNG icon path
+// Map ticker to imported icon
 const iconPaths: Record<CompanyTicker, string> = {
-  AAPL: '/icons/apple.png',
-  META: '/icons/meta.png',
-  MSFT: '/icons/microsoft.png',
-  GOOG: '/icons/google.png',
-  AMZN: '/icons/amazon.png',
-  NVDA: '/icons/nvidia.png',
-  TSLA: '/icons/tesla.png',
+  AAPL: appleIcon,
+  META: metaIcon,
+  MSFT: microsoftIcon,
+  GOOG: googleIcon,
+  AMZN: amazonIcon,
+  NVDA: nvidiaIcon,
+  TSLA: teslaIcon,
 }
 
 // Company display names for alt text
