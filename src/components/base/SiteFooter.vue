@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear()
     <div class="footer-container">
       <!-- Top Section - Branding & Links -->
       <div class="footer-top">
-        <div class="footer-brand">
+        <router-link to="/" class="footer-brand">
           <div class="brand-mark">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
@@ -27,13 +27,35 @@ const currentYear = new Date().getFullYear()
             </svg>
           </div>
           <span class="brand-text">Magnificent Seven</span>
-        </div>
+        </router-link>
 
         <nav class="footer-nav">
-          <a href="#" class="footer-link">Dashboard</a>
-          <a href="#data-source" class="footer-link">Data Source</a>
+          <router-link to="/" class="footer-link">Dashboard</router-link>
           <a
-            href="https://github.com"
+            href="https://docs.google.com/spreadsheets/d/1wx-yoq72MjaVWmzpYX9hgNNnU9A9_AgZ6rNpzgZUMGg"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link external-link"
+          >
+            Data Source
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="external-icon"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/SimonHeistermann/Magnificent-Seven"
             target="_blank"
             rel="noopener noreferrer"
             class="footer-link"
@@ -55,9 +77,8 @@ const currentYear = new Date().getFullYear()
         </div>
 
         <div class="footer-legal-links">
-          <a href="#" class="legal-link">Impressum</a>
-          <a href="#" class="legal-link">Legal Notice</a>
-          <a href="#" class="legal-link">Privacy</a>
+          <router-link to="/legal-notice" class="legal-link">Legal Notice</router-link>
+          <router-link to="/privacy" class="legal-link">Privacy Policy</router-link>
         </div>
       </div>
     </div>
@@ -106,6 +127,12 @@ const currentYear = new Date().getFullYear()
   display: flex;
   align-items: center;
   gap: var(--space-3, 0.75rem);
+  text-decoration: none;
+  transition: opacity var(--transition-fast, 150ms);
+}
+
+.footer-brand:hover {
+  opacity: 0.85;
 }
 
 .brand-mark {
@@ -158,6 +185,25 @@ const currentYear = new Date().getFullYear()
 
 .footer-link:hover::after {
   width: 100%;
+}
+
+.footer-link.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-link.external-link::after {
+  display: none;
+}
+
+.external-icon {
+  opacity: 0.6;
+  transition: opacity var(--transition-fast, 150ms);
+}
+
+.footer-link:hover .external-icon {
+  opacity: 1;
 }
 
 .footer-divider {

@@ -1,98 +1,234 @@
 # Magnificent Seven Dashboard
 
-A professional Vue 3 dashboard displaying financial metrics for the "Magnificent Seven" tech companies: Apple, Meta, Microsoft, Google (Alphabet), Amazon, Nvidia, and Tesla.
+A premium, production-ready financial dashboard displaying quarterly metrics for the "Magnificent Seven" tech giants: Apple, Microsoft, Google (Alphabet), Amazon, Meta, Nvidia, and Tesla.
 
-## Quick Start
+![Vue.js](https://img.shields.io/badge/Vue.js-3.5-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?style=flat-square&logo=vite&logoColor=white)
 
-```sh
-npm install
-npm run dev
-```
+---
 
-Open http://localhost:5173 in your browser.
+## Features
+
+- **Real Financial Data** — Fetches quarterly earnings from Google Sheets (with intelligent fallback to demo data)
+- **6 Interactive Charts** — Revenue trends, TTM breakdown, net income, gross margins, YoY growth, and performance leaders
+- **Focus View** — Click any chart to expand into a detailed modal view
+- **Responsive Design** — Optimized for desktop, tablet, and mobile devices
+- **Premium Dark Theme** — Glassmorphism design with smooth animations
+- **Company Logos** — High-quality PNG icons for all seven companies
+- **Loading States** — Elegant skeleton loaders during data fetch
+- **Error Handling** — Graceful fallback with retry functionality
+
+---
 
 ## Tech Stack
 
-- **Vue 3** with Composition API & TypeScript
-- **Vite** for fast development and building
-- **Pinia** for state management
-- **Vue Router** for navigation (extensible)
-- **ECharts** via vue-echarts for charts
-- **Tailwind CSS v4** for styling
+| Technology | Purpose |
+|------------|---------|
+| **Vue 3** | UI framework with Composition API |
+| **TypeScript** | Type-safe development |
+| **Vite** | Lightning-fast build tool |
+| **Pinia** | State management |
+| **Vue Router** | Client-side routing (hash mode for static hosting) |
+| **ECharts** | Professional charting library |
+| **Tailwind CSS v4** | Utility-first styling |
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+- **Node.js** 20.19+ or 22.12+
+- **npm** 10+
+
+### Development
+
+```bash
+# Clone the repository
+git clone https://github.com/SimonHeistermann/Magnificent-Seven.git
+cd Magnificent-Seven
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## Build for Production
+
+```bash
+# Create optimized production build
+npm run build
+
+# Preview the production build locally
+npm run preview
+```
+
+The build output will be in the `dist/` folder.
+
+---
+
+## Deployment to FTP Server
+
+This project is optimized for static hosting on any FTP server. Follow these steps:
+
+Website: [magnificent-seven.projects.simon-heistermann.de](https://magnificent-seven.projects.simon-heistermann.de)
+
+### Step 1: Build the Project
+
+```bash
+npm run build
+```
+
+This creates a `dist/` folder containing all files needed for deployment.
+
+### Step 2: Upload to FTP
+
+Upload the **contents** of the `dist/` folder to your FTP server:
+
+```
+dist/
+├── index.html          → Upload to root
+├── assets/             → Upload entire folder
+│   ├── *.js
+│   ├── *.css
+│   └── ...
+├── fonts/              → Upload entire folder
+│   └── *.woff2
+└── icons/              → Upload entire folder
+    └── *.png
+```
+
+### Step 3: Verify
+
+Your site should be live at your domain. The URLs will use hash routing:
+- `https://yourdomain.com/` → Dashboard
+- `https://yourdomain.com/#/legal-notice` → Legal Notice
+- `https://yourdomain.com/#/privacy` → Privacy Policy
+
+### FTP Upload with FileZilla (Example)
+
+1. Open FileZilla and connect to your server
+2. Navigate to your web root (usually `public_html/` or `www/`)
+3. Select all files inside your local `dist/` folder
+4. Drag and drop to the server
+5. Wait for upload to complete
+6. Visit your domain to verify
+
+### Important Notes
+
+- **No server configuration required** — Uses hash-based routing (`#/route`)
+- **Works on any static host** — Apache, Nginx, shared hosting, GitHub Pages, Netlify, etc.
+- **All assets are relative** — No base URL configuration needed
+
+---
 
 ## Project Structure
 
 ```
 src/
+├── assets/
+│   ├── fonts.css           # Local Rubik font definitions
+│   └── main.css            # Global styles & Tailwind config
 ├── components/
-│   ├── base/           # Base UI components (Card, Modal, Logo, etc.)
-│   ├── charts/         # ECharts wrapper components
-│   └── widgets/        # Business-specific widgets
-├── constants/          # Company data, colors, API config
-├── pages/              # Page components
-├── services/           # Data fetching & Google Sheets integration
-├── stores/             # Pinia stores
-├── types/              # TypeScript interfaces
-└── utils/              # Normalizers & utilities
+│   ├── base/               # Reusable UI components
+│   │   ├── CompanyLogo.vue # Company PNG icons
+│   │   ├── DashboardCard.vue
+│   │   ├── ErrorState.vue
+│   │   ├── FocusModal.vue
+│   │   ├── SiteFooter.vue
+│   │   └── SkeletonLoader.vue
+│   ├── charts/             # ECharts wrapper components
+│   │   ├── RevenueLineChart.vue
+│   │   ├── RevenueDonutChart.vue
+│   │   ├── NetIncomeBarChart.vue
+│   │   ├── GrossMarginBarChart.vue
+│   │   ├── RevenueGrowthChart.vue
+│   │   └── PerformanceLeadersCard.vue
+│   └── widgets/            # Dashboard widgets
+│       ├── DataSourceCard.vue
+│       ├── RevenueCard.vue
+│       └── RevenueCardsRow.vue
+├── constants/
+│   ├── companies.ts        # Company definitions (ticker, name, color)
+│   └── index.ts            # API config, colors, constants
+├── pages/
+│   ├── DashboardPage.vue   # Main dashboard
+│   ├── LegalNoticePage.vue # Legal notice / Impressum
+│   └── PrivacyPage.vue     # Privacy policy
+├── router/
+│   └── index.ts            # Vue Router configuration
+├── services/
+│   ├── sheets.ts           # Google Sheets data fetching
+│   └── mockData.ts         # Fallback demo data
+├── stores/
+│   └── dashboard.ts        # Pinia store with computed metrics
+├── types/
+│   └── index.ts            # TypeScript interfaces
+└── utils/
+    ├── normalizer.ts       # Data parsing utilities
+    └── index.ts            # Helper functions
 ```
 
-## Key Files
-
-| File | Description |
-|------|-------------|
-| `src/services/sheets.ts` | Google Sheets integration with caching and fallback |
-| `src/services/mockData.ts` | Mock financial data for development |
-| `src/stores/dashboard.ts` | Main Pinia store with computed metrics |
-| `src/constants/companies.ts` | Company definitions (ticker, name, color) |
-| `src/utils/normalizer.ts` | Data parsing utilities for messy sheet data |
-| `src/pages/DashboardPage.vue` | Main dashboard layout |
+---
 
 ## Data Source
 
-The dashboard attempts to fetch data from Google Sheets and falls back to mock data.
+### Google Sheets Integration
 
-### Current Setup (Development)
-- Mock data is used automatically when Sheets access fails
-- Mock data includes realistic quarterly financials from 2021-2024
+The dashboard fetches financial data from a published Google Sheets document:
 
-### Production Setup
+**Data Source:** [View Spreadsheet](https://docs.google.com/spreadsheets/d/1wx-yoq72MjaVWmzpYX9hgNNnU9A9_AgZ6rNpzgZUMGg)
 
-**Option 1: Publish Google Sheet to Web**
-1. In Google Sheets: File > Share > Publish to Web
-2. Select CSV format for the data sheet
-3. The app will automatically fetch from the published URL
+### Fetch Strategy
 
-**Option 2: Backend Proxy (Recommended)**
-1. Create a server endpoint that fetches sheet data
-2. Use Google Sheets API v4 with API key
-3. Update `GOOGLE_SHEETS` config in `src/constants/index.ts`
+1. **Primary:** Published CSV URL (most reliable)
+2. **Fallback 1:** Google Sheets CSV export
+3. **Fallback 2:** Google Visualization API
+4. **Fallback 3:** Built-in demo data
 
-**Option 3: Service Account**
-1. Create a Google Cloud service account
-2. Share the sheet with the service account email
-3. Implement server-side fetching with credentials
+### Caching
+
+- Data is cached in memory for 5 minutes
+- Use the refresh button to force reload
+
+### Updating the Data Source
+
+To use your own Google Sheet:
+
+1. Create a Google Sheet with columns: `Ticker`, `Quarter`, `Revenue`, `Net Income`, `Gross Margin`
+2. Publish the sheet: **File → Share → Publish to web → CSV**
+3. Update `PUBLISHED_CSV_URL` in `src/constants/index.ts`
+
+---
 
 ## Dashboard Widgets
 
-1. **Revenue Cards** - Current quarter revenue with QoQ change
-2. **Revenue Line Chart** - 3-year quarterly revenue trends
-3. **Revenue Breakdown Donut** - TTM revenue distribution
-4. **Net Income TTM Bar** - Trailing 12-month net income
-5. **Gross Margin Bar** - Latest quarter gross margins
-6. **Revenue Growth YoY** - Year-over-year growth by quarter
+| Widget | Description |
+|--------|-------------|
+| **Revenue Cards** | Current quarter revenue with QoQ change for each company |
+| **Revenue Line Chart** | 3-year quarterly revenue trends (multi-line) |
+| **Revenue Donut** | TTM (Trailing Twelve Months) revenue breakdown |
+| **Net Income Bar** | TTM net income sorted by value |
+| **Gross Margin Bar** | Latest quarter gross margin percentages |
+| **Revenue Growth** | Year-over-year growth comparison (4 quarters) |
+| **Performance Leaders** | Best and worst performers with animated values |
 
-## Features
-
-- Click any chart to open in **Focus View** (modal)
-- Responsive design for different screen sizes
-- Loading skeletons during data fetch
-- Error state with retry option
-- "Demo Data" badge when using mock data
+---
 
 ## Customization
 
-### Adding/Modifying Companies
+### Adding Companies
+
 Edit `src/constants/companies.ts`:
+
 ```typescript
 export const COMPANIES: Record<CompanyTicker, Company> = {
   AAPL: {
@@ -102,37 +238,94 @@ export const COMPANIES: Record<CompanyTicker, Company> = {
     logoKey: 'apple',
     color: '#A2AAAD',
   },
-  // ...
+  // Add more companies...
 }
 ```
 
-### Styling
-- Background gradient: `radial-gradient(ellipse at center, #011F35 0%, #020204 70%)`
-- Card background: `#011F35`
-- Accent color: `#00D4FF`
-- Font: Rubik (Google Fonts)
+Add the company logo as PNG in `public/icons/` (lowercase filename).
 
-## Build Commands
+### Theme Colors
 
-```sh
-npm run dev      # Development server
-npm run build    # Production build
-npm run preview  # Preview production build
-npm run lint     # Lint code
-npm run format   # Format code
-```
+Main colors are defined in `src/assets/main.css`:
+
+| Variable | Value | Usage |
+|----------|-------|-------|
+| `--color-background` | `#030508` | Page background |
+| `--color-card` | `rgba(12, 25, 45, 0.75)` | Card backgrounds |
+| `--color-accent` | `#00C8FF` | Primary accent (cyan) |
+| `--color-text-primary` | `#F8FAFC` | Main text color |
+
+### Company Colors
+
+Each company has a brand color used in charts:
+
+- Apple: `#A2AAAD`
+- Meta: `#0081FB`
+- Microsoft: `#00A4EF`
+- Google: `#4285F4`
+- Amazon: `#FF9900`
+- Nvidia: `#76B900`
+- Tesla: `#CC0000`
+
+---
+
+## Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with HMR |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint and Oxlint |
+| `npm run format` | Format code with Prettier |
+| `npm run type-check` | Run TypeScript type checking |
+
+---
 
 ## Browser Support
 
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
+| Browser | Version |
+|---------|---------|
+| Chrome | Latest |
+| Firefox | Latest |
+| Safari | Latest |
+| Edge | Latest |
 
-## TODO for Production
+---
 
-- [ ] Set up backend proxy for Google Sheets API
-- [ ] Add API key authentication
-- [ ] Implement data refresh scheduling
-- [ ] Add company filter/toggle UI
-- [ ] Add export functionality (PDF/CSV)
-- [ ] Add more chart types as needed
+## Legal
+
+- **Legal Notice:** [/#/legal-notice](/#/legal-notice)
+- **Privacy Policy:** [/#/privacy](/#/privacy)
+
+### Disclaimer
+
+This dashboard is for **educational purposes only**. The displayed financial data:
+- Is not real-time and may be outdated
+- Should not be used for investment decisions
+- Is sourced from public data without guarantee of accuracy
+
+---
+
+## Author
+
+**Simon Maximilian Heistermann**
+
+- Website: [simon-heistermann.de](https://simon-heistermann.de)
+- Email: business@heistermann-solutions.de
+- GitHub: [@SimonHeistermann](https://github.com/SimonHeistermann)
+
+---
+
+## License
+
+This project is created for educational and portfolio purposes. All company logos and brand colors are trademarks of their respective owners.
+
+---
+
+## Acknowledgments
+
+- Financial data structure inspired by public earnings reports
+- Chart library: [Apache ECharts](https://echarts.apache.org/)
+- Icons: Custom PNG logos for the Magnificent Seven companies
+- Font: [Rubik](https://fonts.google.com/specimen/Rubik) (locally hosted)

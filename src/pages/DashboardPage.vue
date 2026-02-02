@@ -86,10 +86,12 @@ const focusedChartTitle = computed(() => {
         <div class="header-accent"></div>
         <div class="header-content">
           <h1 class="header-title">The Magnificent Seven</h1>
-          <p class="header-subtitle">Real-time financial metrics for tech's largest companies</p>
+          <p class="header-subtitle">Financial metrics for tech's largest companies</p>
         </div>
-        <div class="header-status" v-if="store.isUsingMockData()">
-          <span class="status-badge">Demo Data</span>
+        <div class="header-status">
+          <span class="status-badge" :class="{ 'status-badge--demo': store.isUsingMockData() }">
+            {{ store.isUsingMockData() ? 'Demo Data' : 'Data from 2024' }}
+          </span>
         </div>
       </header>
 
@@ -323,15 +325,21 @@ const focusedChartTitle = computed(() => {
 }
 
 .status-badge {
-  background: var(--color-accent-subtle, rgba(0, 200, 255, 0.08));
-  border: 1px solid rgba(0, 200, 255, 0.2);
-  color: var(--color-accent, #00c8ff);
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: #fbbf24;
   padding: var(--space-2, 0.5rem) var(--space-4, 1rem);
   border-radius: var(--radius-full, 9999px);
   font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.status-badge--demo {
+  background: var(--color-accent-subtle, rgba(0, 200, 255, 0.08));
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  color: var(--color-accent, #00c8ff);
 }
 
 /* Content */

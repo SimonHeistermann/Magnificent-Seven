@@ -19,22 +19,23 @@ export const MILLION = 1_000_000
 // API Configuration
 export const GOOGLE_SHEETS = {
   // Main data sheet
-  SPREADSHEET_ID: '1m3h9Xce3SRMaq20li2Qg4HuSZowwxQSd9FkQmeuI7Dw',
+  SPREADSHEET_ID: '1wx-yoq72MjaVWmzpYX9hgNNnU9A9_AgZ6rNpzgZUMGg',
 
-  // Sheet GIDs
-  DATA_GID: '244946188',
+  // Published CSV URL (direct access without auth)
+  PUBLISHED_CSV_URL:
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRPsZCZ4pBpDjdCyEpYDvXzJcklqIIJW9pNtOYtTJwaa-vOZ2UllFjKmVxDlh8gbjNhdkOcpyvRXBo2/pub?output=csv',
+
+  // Sheet GIDs (for fallback methods)
+  DATA_GID: '2097954137',
   OVERVIEW_GID: '2097954137',
 
-  // CSV Export URL template
-  // TODO: For production, use a backend proxy to handle authentication
-  // or publish the sheet to web as CSV
+  // CSV Export URL template (requires sheet to be shared publicly)
   getCSVUrl: (gid: string) =>
-    `https://docs.google.com/spreadsheets/d/1m3h9Xce3SRMaq20li2Qg4HuSZowwxQSd9FkQmeuI7Dw/export?format=csv&gid=${gid}`,
+    `https://docs.google.com/spreadsheets/d/1wx-yoq72MjaVWmzpYX9hgNNnU9A9_AgZ6rNpzgZUMGg/export?format=csv&gid=${gid}`,
 
   // Google Visualization API URL
-  // Allows querying public sheets without auth
   getVisualizationUrl: (gid: string) =>
-    `https://docs.google.com/spreadsheets/d/1m3h9Xce3SRMaq20li2Qg4HuSZowwxQSd9FkQmeuI7Dw/gviz/tq?tqx=out:json&gid=${gid}`,
+    `https://docs.google.com/spreadsheets/d/1wx-yoq72MjaVWmzpYX9hgNNnU9A9_AgZ6rNpzgZUMGg/gviz/tq?tqx=out:json&gid=${gid}`,
 }
 
 // Cache duration in milliseconds (5 minutes)

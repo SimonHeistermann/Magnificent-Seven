@@ -1,38 +1,37 @@
 <script setup lang="ts">
 import type { CompanyTicker } from '@/types'
-import { COMPANIES } from '@/constants'
 
-const props = defineProps<{
+defineProps<{
   ticker: CompanyTicker
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
 }>()
 
-const company = COMPANIES[props.ticker]
+// Map ticker to PNG icon path
+const iconPaths: Record<CompanyTicker, string> = {
+  AAPL: '/icons/apple.png',
+  META: '/icons/meta.png',
+  MSFT: '/icons/microsoft.png',
+  GOOG: '/icons/google.png',
+  AMZN: '/icons/amazon.png',
+  NVDA: '/icons/nvidia.png',
+  TSLA: '/icons/tesla.png',
+}
 
-// SVG paths for company logos (simplified/stylized versions)
-const logoSVGs: Record<CompanyTicker, string> = {
-  AAPL: `<path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>`,
-  META: `<path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12c0 5.013 3.693 9.153 8.505 9.876V14.65H8.031v-2.629h2.474v-1.749c0-2.896 1.411-4.167 3.818-4.167 1.153 0 1.762.085 2.051.124v2.294h-1.642c-1.022 0-1.379.969-1.379 2.061v1.437h2.995l-.406 2.629h-2.588v7.247C18.235 21.236 22 17.062 22 12c0-5.523-4.477-10-10-10z"/>`,
-  MSFT: `<path fill="currentColor" d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>`,
-  GOOG: `<path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>`,
-  AMZN: `<path fill="currentColor" d="M15.93 17.09c-.18.16-.43.17-.63.06-.89-.74-1.05-1.08-1.54-1.79-1.47 1.5-2.51 1.95-4.42 1.95-2.25 0-4.01-1.39-4.01-4.17 0-2.18 1.17-3.64 2.86-4.38 1.46-.64 3.49-.76 5.04-.93V7.5c0-.66.05-1.41-.33-1.96-.32-.49-.95-.7-1.5-.7-1.02 0-1.93.53-2.15 1.61-.05.24-.21.48-.44.49l-2.48-.27c-.2-.05-.43-.21-.37-.52.56-2.93 3.2-3.82 5.57-3.82 1.21 0 2.8.32 3.76 1.24 1.21 1.13 1.09 2.64 1.09 4.28v3.88c0 1.17.48 1.68.94 2.31.16.22.19.49-.01.66-.49.42-1.38 1.2-1.87 1.63l-.51-.04zM14 11.3c0 .88.02 1.6-.42 2.37-.35.63-.9 1.01-1.52 1.01-.84 0-1.34-.64-1.34-1.59 0-1.87 1.68-2.21 3.28-2.21v.42z"/><path fill="currentColor" d="M20.62 19.32c-1.78 1.32-4.38 2.03-6.62 2.03-3.13 0-5.95-1.16-8.08-3.09-.17-.15-.02-.36.18-.24 2.3 1.34 5.15 2.14 8.09 2.14 1.98 0 4.16-.41 6.17-1.27.3-.13.55.2.26.43z"/>`,
-  NVDA: `<path fill="currentColor" d="M9.55 8.22v-.87c.15-.01.3-.02.46-.02 3.11 0 5.24 2.01 5.24 5.15 0 3.11-2.19 5.05-5.39 5.05-3.28 0-5.46-2.09-5.46-5.33 0-2.53 1.36-4.27 3.68-5.07V5.97C4.87 6.94 2.96 9.46 2.96 12.5c0 4.23 3.07 7.05 7.26 7.05 4.08 0 6.93-2.7 6.93-6.61 0-4.15-3.25-6.84-7.6-4.72zm0 5.69c-.81-.06-1.65-.09-2.53-.09-.38 0-.78.01-1.15.03.25 1.44 1.34 2.52 3.04 2.52 1.02 0 1.76-.48 2.12-1.15-.33-.32-.79-.72-1.48-1.31zm0-3.39v1.68c.68.48 1.17.89 1.51 1.21.01-.05.01-.1.01-.15 0-1.37-.56-2.35-1.52-2.74z"/>`,
-  TSLA: `<path fill="currentColor" d="M12 4L3 8v2h18V8l-9-4zm0 2.5c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM5 11v9h2v-6h10v6h2v-9H5z"/>`,
+// Company display names for alt text
+const companyNames: Record<CompanyTicker, string> = {
+  AAPL: 'Apple',
+  META: 'Meta',
+  MSFT: 'Microsoft',
+  GOOG: 'Google',
+  AMZN: 'Amazon',
+  NVDA: 'Nvidia',
+  TSLA: 'Tesla',
 }
 </script>
 
 <template>
-  <div
-    class="company-logo"
-    :class="[size || 'md']"
-    :style="{ color: company.color }"
-  >
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      v-html="logoSVGs[ticker]"
-    />
+  <div class="company-logo" :class="[size || 'md']">
+    <img :src="iconPaths[ticker]" :alt="companyNames[ticker]" class="logo-img" />
   </div>
 </template>
 
@@ -44,23 +43,29 @@ const logoSVGs: Record<CompanyTicker, string> = {
   flex-shrink: 0;
 }
 
-.company-logo svg {
+.logo-img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+}
+
+.company-logo.xs {
+  width: 14px;
+  height: 14px;
 }
 
 .company-logo.sm {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 .company-logo.md {
   width: 24px;
-  height: 20px;
+  height: 24px;
 }
 
 .company-logo.lg {
   width: 32px;
-  height: 28px;
+  height: 32px;
 }
 </style>

@@ -90,14 +90,21 @@ class SheetsService {
    * Fetch live data from Google Sheets
    */
   private async fetchLiveData(): Promise<CompanyFinancialData[]> {
-    // Strategy 1: Try CSV export (works for published sheets)
+    // Strategy 1: Try published CSV URL (most reliable)
+    try {
+      return await this.fetchFromPublishedCSV()
+    } catch (error) {
+      console.warn('[SheetsService] Published CSV fetch failed:', error)
+    }
+
+    // Strategy 2: Try CSV export (works for published sheets)
     try {
       return await this.fetchFromCSV()
     } catch (error) {
-      console.warn('[SheetsService] CSV fetch failed:', error)
+      console.warn('[SheetsService] CSV export fetch failed:', error)
     }
 
-    // Strategy 2: Try Google Visualization API (works for public sheets)
+    // Strategy 3: Try Google Visualization API (works for public sheets)
     try {
       return await this.fetchFromVisualizationAPI()
     } catch (error) {
@@ -105,6 +112,21 @@ class SheetsService {
     }
 
     throw new Error('All fetch strategies failed')
+  }
+
+  /**
+   * Fetch data via published CSV URL (preferred method)
+   */
+  private async fetchFromPublishedCSV(): Promise<CompanyFinancialData[]> {
+    const url = GOOGLE_SHEETS.PUBLISHED_CSV_URL
+    const response = await fetch(url)
+
+    if (!response.ok) {
+      throw new Error(`Published CSV fetch failed: ${response.status}`)
+    }
+
+    const csvText = await response.text()
+    return this.parseCSV(csvText)
   }
 
   /**
