@@ -19,243 +19,342 @@ import { SiteFooter } from '@/components/base'
 
       <!-- Content -->
       <main class="page-content">
-        <!-- Introduction -->
+        <!-- Training Project Notice -->
         <section class="content-section">
-          <h2 class="section-title">1. Data Protection at a Glance</h2>
-          <div class="text-card">
-            <h3 class="text-heading">General Information</h3>
-            <p class="text-content">
-              The following information provides a simple overview of what happens to your personal data when you visit
-              this website. Personal data is any data that can be used to personally identify you. For detailed
-              information on the subject of data protection, please refer to our privacy policy listed below this text.
-            </p>
-
-            <h3 class="text-heading">Data Collection on this Website</h3>
-            <p class="text-content">
-              <strong>Who is responsible for data collection on this website?</strong><br />
-              Data processing on this website is carried out by the website operator. You can find the operator's
-              contact details in the "Legal Notice" section of this website.
-            </p>
-
-            <h3 class="text-heading">How do we collect your data?</h3>
-            <p class="text-content">
-              On the one hand, your data is collected when you provide it to us. This could be data that you enter in a
-              contact form, for example. Other data is collected automatically or with your consent when you visit the
-              website through our IT systems. This is primarily technical data (e.g., internet browser, operating
-              system, or time of page access). This data is collected automatically as soon as you enter this website.
+          <div class="notice-card">
+            <p class="notice-text">
+              <strong>Note:</strong> This website is a training project created during education at
+              <a href="https://developerakademie.com/" target="_blank" rel="noopener noreferrer" class="text-link"
+                >Developer Akademie</a
+              >. It is not a commercial product. Data processing is minimal and limited to what is technically necessary
+              for hosting and displaying the website.
             </p>
           </div>
         </section>
 
-        <!-- Hosting -->
+        <!-- Table of Contents -->
         <section class="content-section">
-          <h2 class="section-title">2. Hosting</h2>
+          <h2 class="section-title">Contents</h2>
           <div class="text-card">
-            <h3 class="text-heading">External Hosting</h3>
-            <p class="text-content">
-              This website is hosted externally. The personal data collected on this website is stored on the servers of
-              the host(s). This may include IP addresses, contact requests, meta and communication data, contract data,
-              contact details, names, website accesses, and other data generated via a website.
-            </p>
-            <p class="text-content">
-              External hosting is carried out for the purpose of fulfilling contracts with our potential and existing
-              customers (Art. 6 para. 1 lit. b GDPR) and in the interest of a secure, fast, and efficient provision of
-              our online offer by a professional provider (Art. 6 para. 1 lit. f GDPR).
-            </p>
+            <ol class="toc-list">
+              <li>Controller</li>
+              <li>Data Protection Officer</li>
+              <li>Data We Collect</li>
+              <li>Purposes and Legal Basis</li>
+              <li>Third-Party Processors</li>
+              <li>International Data Transfers</li>
+              <li>Cookies and Similar Technologies</li>
+              <li>Retention Periods</li>
+              <li>Your Rights</li>
+              <li>Supervisory Authority</li>
+              <li>Automated Decision-Making</li>
+              <li>Obligation to Provide Data</li>
+              <li>Changes to This Policy</li>
+              <li>Severability</li>
+            </ol>
           </div>
         </section>
 
-        <!-- General Information -->
+        <!-- 1. Controller -->
         <section class="content-section">
-          <h2 class="section-title">3. General Information and Mandatory Information</h2>
+          <h2 class="section-title">1. Controller</h2>
           <div class="text-card">
-            <h3 class="text-heading">Data Protection</h3>
             <p class="text-content">
-              The operators of these pages take the protection of your personal data very seriously. We treat your
-              personal data confidentially and in accordance with statutory data protection regulations and this privacy
-              policy. When you use this website, various personal data is collected. Personal data is data that can be
-              used to personally identify you.
+              The controller responsible for data processing on this website within the meaning of the General Data
+              Protection Regulation (GDPR) is:
             </p>
-
-            <h3 class="text-heading">Note on the Responsible Party</h3>
             <p class="text-content">
-              The responsible party for data processing on this website is:<br /><br />
               <strong>Simon Maximilian Heistermann</strong><br />
-              Mutter-Teresa-Weg 6<br />
-              46325 Borken<br />
-              Germany<br /><br />
-              Email: business@heistermann-solutions.de
-            </p>
-
-            <h3 class="text-heading">Storage Duration</h3>
-            <p class="text-content">
-              Unless a more specific storage period has been specified within this privacy policy, your personal data
-              will remain with us until the purpose for data processing no longer applies. If you assert a justified
-              request for deletion or revoke your consent to data processing, your data will be deleted unless we have
-              other legally permissible reasons for storing your personal data.
-            </p>
-
-            <h3 class="text-heading">SSL/TLS Encryption</h3>
-            <p class="text-content">
-              This site uses SSL or TLS encryption for security reasons and to protect the transmission of confidential
-              content, such as orders or inquiries that you send to us as the site operator. You can recognize an
-              encrypted connection by the fact that the address line of the browser changes from "http://" to "https://"
-              and by the lock symbol in your browser line.
+              Mutter-Teresa-Weg 6, 46325 Borken, Germany<br />
+              Email:
+              <a href="mailto:simon@heistermann-solutions.de" class="text-link">simon@heistermann-solutions.de</a>
             </p>
           </div>
         </section>
 
-        <!-- Data Collection -->
+        <!-- 2. Data Protection Officer -->
         <section class="content-section">
-          <h2 class="section-title">4. Data Collection on this Website</h2>
+          <h2 class="section-title">2. Data Protection Officer</h2>
           <div class="text-card">
-            <h3 class="text-heading">Server Log Files</h3>
             <p class="text-content">
-              The provider of the pages automatically collects and stores information in so-called server log files,
-              which your browser automatically transmits to us. These are:
+              We are not legally required to appoint a data protection officer pursuant to § 38 of the German Federal
+              Data Protection Act (BDSG). For any data protection inquiries, please contact us directly at
+              <a href="mailto:simon@heistermann-solutions.de" class="text-link">simon@heistermann-solutions.de</a>.
+            </p>
+          </div>
+        </section>
+
+        <!-- 3. Data We Collect -->
+        <section class="content-section">
+          <h2 class="section-title">3. Data We Collect</h2>
+          <div class="text-card">
+            <p class="text-content">
+              We process personal data that is automatically collected when you use our website. This website does not
+              contain forms, user accounts, or any input fields that collect personal data from visitors.
+            </p>
+
+            <h3 class="text-heading">3.1 Technical Data (Server Log Files)</h3>
+            <p class="text-content">
+              When you visit our website, the following data is automatically collected by our hosting provider:
             </p>
             <ul class="text-list">
-              <li>Browser type and browser version</li>
-              <li>Operating system used</li>
-              <li>Referrer URL</li>
-              <li>Host name of the accessing computer</li>
-              <li>Time of the server request</li>
               <li>IP address</li>
+              <li>Browser type and version</li>
+              <li>Operating system</li>
+              <li>Date, time, and duration of access</li>
+              <li>Referring URL</li>
+              <li>Pages visited</li>
             </ul>
+
+            <h3 class="text-heading">3.2 Google Sheets Data Retrieval</h3>
             <p class="text-content">
-              This data is not merged with other data sources. The collection of this data is based on Art. 6 para. 1
-              lit. f GDPR. The website operator has a legitimate interest in the technically error-free presentation and
-              optimization of their website – for this purpose, the server log files must be collected.
+              This website retrieves financial data from a publicly accessible Google Sheets document. When you visit
+              this website, your browser makes requests to Google servers to fetch this data. This may transmit your IP
+              address and browser information to Google. No authentication or personal data is required to access this
+              public spreadsheet.
             </p>
           </div>
         </section>
 
-        <!-- External Services -->
+        <!-- 4. Purposes and Legal Basis -->
         <section class="content-section">
-          <h2 class="section-title">5. External Services</h2>
+          <h2 class="section-title">4. Purposes and Legal Basis</h2>
           <div class="text-card">
-            <h3 class="text-heading">Google Sheets Integration</h3>
             <p class="text-content">
-              This website uses Google Sheets for displaying financial data. When you use this website, data may be
-              transferred to Google servers. This is a published, publicly accessible spreadsheet that does not require
-              authentication. The use is based on our legitimate interest in providing accurate and up-to-date financial
-              information (Art. 6 para. 1 lit. f GDPR).
+              We process your personal data for the following purposes and on the following legal bases:
             </p>
-            <p class="text-content">
-              For more information, please see Google's privacy policy at:
-              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-link">
-                https://policies.google.com/privacy
-              </a>
-            </p>
-          </div>
-        </section>
-
-        <!-- Important Disclaimers -->
-        <section class="content-section">
-          <h2 class="section-title">6. Important Disclaimers</h2>
-          <div class="text-card">
-            <h3 class="text-heading">Educational Purpose</h3>
-            <p class="text-content">
-              This dashboard is created for educational purposes only. It is a portfolio project demonstrating web
-              development skills and is not intended for professional financial analysis or as a tool for making
-              investment decisions.
-            </p>
-
-            <h3 class="text-heading">No Financial Advice</h3>
-            <p class="text-content">
-              The information displayed on this website does not constitute financial, investment, legal, or tax advice.
-              The displayed data should not be used as a basis for investment decisions. Always consult with qualified
-              financial professionals before making any investment decisions.
-            </p>
-
-            <h3 class="text-heading">No Guarantee of Data Accuracy</h3>
-            <p class="text-content">
-              While we strive to display accurate financial data, we make no guarantees regarding the accuracy,
-              completeness, or timeliness of the information presented. Data may contain errors, be outdated, or be
-              incomplete. Users should verify all information through official sources before relying on it.
-            </p>
-
-            <h3 class="text-heading">No Liability</h3>
-            <p class="text-content">
-              We accept no liability for any losses, damages, or decisions made based on the information displayed on
-              this website. Use of this website and its data is entirely at your own risk.
-            </p>
-          </div>
-        </section>
-
-        <!-- Data Sources -->
-        <section class="content-section">
-          <h2 class="section-title">7. Data Sources</h2>
-          <div class="text-card">
-            <h3 class="text-heading">Google Sheets</h3>
-            <p class="text-content">
-              Financial data displayed on this dashboard is sourced from a publicly accessible Google Sheets document.
-              This data is collected from various public financial reports and may be subject to delays or inaccuracies.
-              The website operator is not responsible for any errors or inaccuracies in the source data.
-            </p>
-            <p class="text-content">
-              The data source can be viewed directly at:
-              <a
-                href="https://docs.google.com/spreadsheets/d/1wx-yoq72MjaVWmzpYX9hgNNnU9A9_AgZ6rNpzgZUMGg"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-link"
-              >
-                Google Sheets Data Source
-              </a>
-            </p>
-
-            <h3 class="text-heading">Third-Party Data</h3>
-            <p class="text-content">
-              The website operator is not responsible for the accuracy, completeness, or timeliness of any third-party
-              data displayed on this website. Users should independently verify all information before making any
-              decisions based on the displayed data.
-            </p>
-          </div>
-        </section>
-
-        <!-- Your Rights -->
-        <section class="content-section">
-          <h2 class="section-title">8. Your Rights</h2>
-          <div class="text-card">
-            <h3 class="text-heading">Right to Information</h3>
-            <p class="text-content">
-              You have the right to receive information about your stored personal data, its origin and recipients, and
-              the purpose of data processing at any time free of charge.
-            </p>
-
-            <h3 class="text-heading">Right to Rectification</h3>
-            <p class="text-content">
-              You have the right to request the rectification of inaccurate personal data concerning you without undue
-              delay.
-            </p>
-
-            <h3 class="text-heading">Right to Erasure</h3>
-            <p class="text-content">
-              You have the right to request the erasure of personal data concerning you without undue delay, provided
-              that one of the grounds specified in Art. 17 GDPR applies.
-            </p>
-
-            <h3 class="text-heading">Right to Object</h3>
-            <p class="text-content">
-              If your personal data is processed based on legitimate interests pursuant to Art. 6 para. 1 lit. f GDPR,
-              you have the right to object to the processing of your personal data pursuant to Art. 21 GDPR, provided
-              there are grounds relating to your particular situation.
-            </p>
-          </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="content-section">
-          <h2 class="section-title">9. Contact for Data Protection</h2>
-          <div class="info-card">
-            <div class="info-row">
-              <span class="info-label">For questions about data protection</span>
-              <a href="mailto:business@heistermann-solutions.de" class="info-value link">
-                business@heistermann-solutions.de
-              </a>
+            <div class="data-table">
+              <div class="table-row table-header">
+                <span class="table-cell">Purpose</span>
+                <span class="table-cell">Legal Basis</span>
+              </div>
+              <div class="table-row">
+                <span class="table-cell">Website hosting &amp; security</span>
+                <span class="table-cell"
+                  >Art. 6(1)(f) GDPR — legitimate interest in operating a secure website</span
+                >
+              </div>
+              <div class="table-row">
+                <span class="table-cell">Google Sheets data retrieval</span>
+                <span class="table-cell"
+                  >Art. 6(1)(f) GDPR — legitimate interest in displaying financial data for educational
+                  purposes</span
+                >
+              </div>
             </div>
           </div>
+        </section>
+
+        <!-- 5. Third-Party Processors -->
+        <section class="content-section">
+          <h2 class="section-title">5. Third-Party Processors</h2>
+          <div class="text-card">
+            <p class="text-content">
+              We use the following third-party service providers to operate our website:
+            </p>
+
+            <h3 class="text-heading">Hosting Provider</h3>
+            <p class="text-content">
+              This website is hosted on an external server. The hosting provider processes technical access data (IP
+              address, request logs) as part of providing the hosting service. Processing is based on Art. 6(1)(f)
+              GDPR — our legitimate interest in operating a secure and reliable website.
+            </p>
+
+            <h3 class="text-heading">Google LLC</h3>
+            <p class="text-content">
+              Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA<br />
+              Purpose: Provision of publicly accessible Google Sheets data used to display financial information on this
+              dashboard.<br />
+              Data processed: IP address, browser information (transmitted automatically when your browser fetches data
+              from Google servers).<br />
+              Privacy policy:
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-link"
+                >https://policies.google.com/privacy</a
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- 6. International Data Transfers -->
+        <section class="content-section">
+          <h2 class="section-title">6. International Data Transfers</h2>
+          <div class="text-card">
+            <p class="text-content">
+              Google LLC is based in the United States. Data transfers to the US are conducted on the following legal
+              bases:
+            </p>
+            <p class="text-content">
+              <strong>EU-US Data Privacy Framework (DPF):</strong> The European Commission has adopted an adequacy
+              decision for the EU-US Data Privacy Framework (Commission Implementing Decision of 10 July 2023). Google
+              LLC is certified under the DPF, which ensures an adequate level of data protection.
+            </p>
+            <p class="text-content">
+              <strong>Standard Contractual Clauses (SCCs):</strong> As an additional safeguard, Google applies Standard
+              Contractual Clauses pursuant to Art. 46(2)(c) GDPR.
+            </p>
+          </div>
+        </section>
+
+        <!-- 7. Cookies and Similar Technologies -->
+        <section class="content-section">
+          <h2 class="section-title">7. Cookies and Similar Technologies</h2>
+          <div class="text-card">
+            <p class="text-content">
+              This website does not use cookies. No cookie consent banner is required or displayed.
+            </p>
+            <p class="text-content">
+              This website does not use localStorage, sessionStorage, or any other client-side storage mechanism. No
+              data is stored on your device when you visit this website.
+            </p>
+          </div>
+        </section>
+
+        <!-- 8. Retention Periods -->
+        <section class="content-section">
+          <h2 class="section-title">8. Retention Periods</h2>
+          <div class="text-card">
+            <p class="text-content">
+              We retain personal data only as long as necessary for the purposes for which it was collected:
+            </p>
+            <div class="data-table">
+              <div class="table-row table-header">
+                <span class="table-cell">Data Category</span>
+                <span class="table-cell">Retention Period</span>
+              </div>
+              <div class="table-row">
+                <span class="table-cell">Server/access logs (hosting provider)</span>
+                <span class="table-cell">Per hosting provider policy (typically 30 days)</span>
+              </div>
+              <div class="table-row">
+                <span class="table-cell">Google Sheets request logs</span>
+                <span class="table-cell">Per Google's data retention policy</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Your Rights -->
+        <section class="content-section">
+          <h2 class="section-title">9. Your Rights</h2>
+          <div class="text-card">
+            <p class="text-content">
+              Under the GDPR, you have the following rights regarding your personal data:
+            </p>
+
+            <h3 class="text-heading">Right of access (Art. 15 GDPR)</h3>
+            <p class="text-content">
+              You may request confirmation of whether we process your personal data and, if so, obtain a copy of that
+              data.
+            </p>
+
+            <h3 class="text-heading">Right to rectification (Art. 16 GDPR)</h3>
+            <p class="text-content">You may request correction of inaccurate or incomplete data.</p>
+
+            <h3 class="text-heading">Right to erasure (Art. 17 GDPR)</h3>
+            <p class="text-content">
+              You may request deletion of your data, subject to legal retention obligations.
+            </p>
+
+            <h3 class="text-heading">Right to restriction (Art. 18 GDPR)</h3>
+            <p class="text-content">
+              You may request restriction of processing in certain circumstances.
+            </p>
+
+            <h3 class="text-heading">Right to data portability (Art. 20 GDPR)</h3>
+            <p class="text-content">
+              You may request your data in a structured, commonly used, machine-readable format.
+            </p>
+
+            <h3 class="text-heading">Right to object (Art. 21 GDPR)</h3>
+            <p class="text-content">
+              You may object to processing based on legitimate interests at any time, for reasons related to your
+              particular situation.
+            </p>
+
+            <h3 class="text-heading">Right to withdraw consent (Art. 7(3) GDPR)</h3>
+            <p class="text-content">
+              Where processing is based on your consent, you may withdraw consent at any time without affecting the
+              lawfulness of processing carried out before withdrawal.
+            </p>
+
+            <p class="text-content">
+              To exercise any of these rights, please contact us at
+              <a href="mailto:simon@heistermann-solutions.de" class="text-link">simon@heistermann-solutions.de</a>. We
+              will respond within one month of receiving your request.
+            </p>
+          </div>
+        </section>
+
+        <!-- 10. Supervisory Authority -->
+        <section class="content-section">
+          <h2 class="section-title">10. Supervisory Authority</h2>
+          <div class="text-card">
+            <p class="text-content">
+              You have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR). The
+              competent supervisory authority for us is:
+            </p>
+            <p class="text-content">
+              <strong
+                >Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)</strong
+              ><br />
+              Postfach 20 04 44<br />
+              40102 Düsseldorf, Germany<br />
+              Website:
+              <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener noreferrer" class="text-link"
+                >www.ldi.nrw.de</a
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- 11. Automated Decision-Making -->
+        <section class="content-section">
+          <h2 class="section-title">11. Automated Decision-Making</h2>
+          <div class="text-card">
+            <p class="text-content">
+              We do not use fully automated decision-making, including profiling, within the meaning of Art. 22 GDPR.
+            </p>
+          </div>
+        </section>
+
+        <!-- 12. Obligation to Provide Data -->
+        <section class="content-section">
+          <h2 class="section-title">12. Obligation to Provide Data</h2>
+          <div class="text-card">
+            <p class="text-content">
+              There is no obligation to provide personal data when visiting this website. The website is a passive,
+              read-only dashboard that does not require any user input or registration.
+            </p>
+          </div>
+        </section>
+
+        <!-- 13. Changes to This Policy -->
+        <section class="content-section">
+          <h2 class="section-title">13. Changes to This Policy</h2>
+          <div class="text-card">
+            <p class="text-content">
+              We may update this privacy policy from time to time to reflect changes in our practices or for legal,
+              regulatory, or operational reasons. Minor corrections or clarifications may take effect immediately. The
+              "Last updated" date below reflects the most recent revision.
+            </p>
+          </div>
+        </section>
+
+        <!-- 14. Severability -->
+        <section class="content-section">
+          <h2 class="section-title">14. Severability</h2>
+          <div class="text-card">
+            <p class="text-content">
+              Should any provision of this privacy policy be held invalid or unenforceable, the remaining provisions
+              shall remain in full force and effect. Any invalid provision shall be replaced by a valid provision that
+              comes closest to the intent of the original.
+            </p>
+          </div>
+        </section>
+
+        <!-- Last Updated -->
+        <section class="content-section">
+          <p class="last-updated">Last updated: March 2026</p>
         </section>
       </main>
     </div>
@@ -335,6 +434,35 @@ import { SiteFooter } from '@/components/base'
   letter-spacing: -0.01em;
 }
 
+/* Notice Card */
+.notice-card {
+  background: rgba(0, 200, 255, 0.04);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid rgba(0, 200, 255, 0.12);
+  padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
+}
+
+.notice-text {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #94a3b8);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.notice-text strong {
+  color: var(--color-accent, #00c8ff);
+  font-weight: 500;
+}
+
+/* TOC */
+.toc-list {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #94a3b8);
+  line-height: 1.9;
+  margin: 0;
+  padding-left: var(--space-6, 1.5rem);
+}
+
 /* Text Card */
 .text-card {
   background: var(--color-card, rgba(12, 25, 45, 0.75));
@@ -394,6 +522,42 @@ import { SiteFooter } from '@/components/base'
   opacity: 0.8;
 }
 
+/* Data Table */
+.data-table {
+  margin-top: var(--space-4, 1rem);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.table-row {
+  display: flex;
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.table-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.table-header {
+  background: rgba(0, 200, 255, 0.04);
+}
+
+.table-header .table-cell {
+  font-weight: 500;
+  color: var(--color-text-primary, #f8fafc);
+  font-size: 0.8125rem;
+}
+
+.table-cell {
+  flex: 1;
+  padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary, #94a3b8);
+  line-height: 1.6;
+}
+
 /* Info Card */
 .info-card {
   background: var(--color-card, rgba(12, 25, 45, 0.75));
@@ -404,43 +568,10 @@ import { SiteFooter } from '@/components/base'
   padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
 }
 
-.info-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--space-4, 1rem);
-  padding: var(--space-3, 0.75rem) 0;
-}
-
-.info-row:first-child {
-  padding-top: 0;
-}
-
-.info-row:last-child {
-  padding-bottom: 0;
-}
-
-.info-label {
-  font-size: 0.8125rem;
+.last-updated {
+  font-size: 0.75rem;
   color: var(--color-text-muted, #64748b);
-  flex-shrink: 0;
-}
-
-.info-value {
-  font-size: 0.875rem;
-  color: var(--color-text-primary, #f8fafc);
-  text-align: right;
-  line-height: 1.5;
-}
-
-.info-value.link {
-  color: var(--color-accent, #00c8ff);
-  text-decoration: none;
-  transition: opacity var(--transition-fast, 150ms);
-}
-
-.info-value.link:hover {
-  opacity: 0.8;
+  margin: 0;
 }
 
 /* Responsive */
@@ -453,13 +584,19 @@ import { SiteFooter } from '@/components/base'
     font-size: 1.75rem;
   }
 
-  .info-row {
+  .table-row {
     flex-direction: column;
-    gap: var(--space-1, 0.25rem);
+    gap: 0;
   }
 
-  .info-value {
-    text-align: left;
+  .table-cell {
+    padding: var(--space-2, 0.5rem) var(--space-4, 1rem);
+  }
+
+  .table-cell:first-child {
+    padding-bottom: 0;
+    font-weight: 500;
+    color: var(--color-text-primary, #f8fafc);
   }
 }
 </style>

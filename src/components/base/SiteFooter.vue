@@ -79,6 +79,7 @@ const currentYear = new Date().getFullYear()
         <div class="footer-legal-links">
           <router-link to="/legal-notice" class="legal-link">Legal Notice</router-link>
           <router-link to="/privacy" class="legal-link">Privacy Policy</router-link>
+          <router-link to="/disclaimer" class="legal-link">Disclaimer</router-link>
         </div>
       </div>
     </div>

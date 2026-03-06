@@ -18,6 +18,11 @@ const router = createRouter({
       name: 'privacy',
       component: () => import('@/pages/PrivacyPage.vue'),
     },
+    {
+      path: '/disclaimer',
+      name: 'disclaimer',
+      component: () => import('@/pages/DisclaimerPage.vue'),
+    },
   ],
   scrollBehavior(_to, _from, savedPosition) {
     if (savedPosition) {
